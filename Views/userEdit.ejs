@@ -1,0 +1,30 @@
+<%- include ('partials/header.ejs')%>
+
+<div class="container" id="">
+    <div class="card">
+        <div class="card-header">
+            <h1>Editar Usuário</h1>
+            <hr>
+        </div>
+        <div class="card-body">
+            <form action="/user/update" method="POST">
+                    <label>Nome: </label>
+                    <input type="text" name="nome" id="nome" value="<%= user.nome %>" required>
+                    <label>Email: </label>
+                    <input type="text" name="email" id="email" value="<%= user.email %>" required>
+                    <label>Login: </label>
+                    <input type="text" name="login" id="login" value="<%= user.login %>" required>
+                    <label>Senha: </label>
+                    <input type="text" name="senha" id="senha" value="<%= user.senha %>" required>
+                    <label>Acesso: </label>
+                    <input type="text" name="acesso" id="acesso" value="<%= user.acesso %>" required>
+                    <input type="hidden" name="id" value="<%= user.id %>">
+
+                    <input type="submit" class="btn btn-warning" value="Alterar" onclick="return confirm('Confirma as alterações para o usuário <%= user.nome%>')">
+            </form>
+            <hr>
+        </div>
+    </div>
+</div>
+
+<%- include ('partials/footer.ejs')%>

@@ -38,7 +38,7 @@
                     <td><%= user.login%></td>
                     <td><%= user.senha%></td>
                     <td><%= user.acesso%></td>
-                    <td><a href="">Editar</a></td>
+                    <td><a href="/user/edit/<%=user.id %>">Editar</a></td>
                     <td><a onclick="return confirm('Deseja mesmo excluir o usuário <%= user.nome %>?')" href="/User/delete/<%= user.id %>">Excluir</a></td>
                 </tr>
             <% }) %>

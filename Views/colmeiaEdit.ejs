@@ -1,0 +1,26 @@
+<%- include ('partials/header.ejs')%>
+
+<div class="container" id="">
+    <div class="card">
+        <div class="card-header">
+            <h1>Editar Colmeia</h1>
+            <hr>
+        </div>
+        <div class="card-body">
+            <form action="/colmeia/update" method="POST">
+                    <label>Nome: </label>
+                    <input type="text" name="nome" id="nome" value="<%= colmeia.nome %>" required>
+                    <label>Tipo de Abelha: </label>
+                    <input type="text" name="tipoAbelha" id="tipoAbelha" value="<%= colmeia.tipoAbelha %>" required>
+                    <label>Tamanho: </label>
+                    <input type="text" name="tamanho" id="tamanho" value="<%= colmeia.tamanho %>" required>
+                    <input type="hidden" name="id" value="<%= colmeia.id %>">
+
+                    <input type="submit" class="btn btn-warning" value="Alterar" onclick="return confirm('Confirma as alterações para a colmeia <%= colmeia.nome%>')">
+            </form>
+            <hr>
+        </div>
+    </div>
+</div>
+
+<%- include ('partials/footer.ejs')%>

@@ -8,7 +8,7 @@
         <input type="text" name="nome" id="nome" required>
         <label>Tipo de Abelha: </label>
         <input type="text" name="tipoAbelha" id="tipoAbelha" required>
-        <label>Tamanhoo: </label>
+        <label>Tamanho: </label>
         <input type="text" name="tamanho" id="tamanho" required>
 
         <input type="submit" value="Cadastrar">
@@ -29,7 +29,7 @@
                     <td><%= colmeia.nome%></td>
                     <td><%= colmeia.tipoAbelha%></td>
                     <td><%= colmeia.tamanho%></td>
-                    <td><a href="">Editar</a></td>
+                    <td><a href="/colmeia/edit/<%=colmeia.id %>">Editar</a></td>
                     <td><a onclick="return confirm('Deseja mesmo excluir a colmeia <%= colmeia.nome %>?')" href="/Colmeia/delete/<%= colmeia.id %>">Excluir</a></td>
                 </tr>
             <% }) %>

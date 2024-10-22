@@ -42,4 +42,41 @@ UserRouter.get("/delete/:id", (req, res)=>{
     })
 })
 
+
+UserRouter.get("/edit/:id", (req,res)=>{
+    const id = req.params.id
+    //memorize esse comando do sequelize
+    User.findByPk(id).then((user) => {
+        res.render("userEdit", {
+            user:user,
+        });
+    }).catch((error) => {
+        console.log(error)
+    })
+});
+
+UserRouter.post("/update", (req, res) => {
+    const id = req.body.id
+    const nome = req.body.nome;
+    const email = req.body.email;
+    const login = req.body.login;
+    const senha = req.body.senha;
+    const acesso = req.body.acesso;
+   
+    User.update(
+        {
+            nome:nome,
+            email:email,
+            login:login,
+            senha:senha,
+            acesso:acesso
+        },
+        {where: {id:id}}
+    ).then(()=>{
+        res.redirect("/user")
+    }).catch((error) => {
+        console.log(error)
+    })
+});
+
 export default UserRouter;
