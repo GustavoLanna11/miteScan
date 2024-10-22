@@ -1,0 +1,49 @@
+<%- include ('partials/header.ejs')%>
+
+<div class="container">
+    <h1>Cadastrar Usuáiro</h1>
+    <form action="/user/new" method="POST">
+        <label>Nome: </label>
+        <input type="text" name="nome" id="nome" required>
+        <label>Email: </label>
+        <input type="text" name="email" id="email" required>
+        <label>Login: </label>
+        <input type="text" name="login" id="login" required>
+        <label>Senha: </label>
+        <input type="text" name="senha" id="senha" required>
+        <label>Acesso: </label>
+        <input type="text" name="acesso" id="acesso" required>
+
+        <input type="submit" value="Cadastrar">
+        <input type="reset" value="Limpar">
+
+    </form>
+    <br><hr><br>
+
+    <table>
+        <thead>
+            <th style="width: 150px; text-align: left;">Nome:</th>
+            <th style="width: 200px; text-align: left;">Email:</th>
+            <th style="width: 200px; text-align: left;">Login:</th>
+            <th style="width: 200px; text-align: left;">Senha:</th>
+            <th style="width: 150px; text-align: left;">Acesso:</th>
+            <th style="width: 150px; text-align: left;">Ações:</th>
+        </thead>
+        <tbody>
+            <% user.forEach(user => { %>
+                <tr>
+                    <td><%= user.nome%></td>
+                    <td><%= user.email%></td>
+                    <td><%= user.login%></td>
+                    <td><%= user.senha%></td>
+                    <td><%= user.acesso%></td>
+                    <td><a href="">Editar</a></td>
+                    <td><a onclick="return confirm('Deseja mesmo excluir o usuário <%= user.nome %>?')" href="/User/delete/<%= user.id %>">Excluir</a></td>
+                </tr>
+            <% }) %>
+            
+        </tbody>
+    </table>
+</div>
+
+<%- include ('partials/footer.ejs')%>
