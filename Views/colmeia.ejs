@@ -2,6 +2,7 @@
 
 <div class="container">
     <h1>Cadastrar Colmeia</h1>
+    <a href="/">Voltar</a>
     <form action="/colmeia/new" method="POST">
         <label>Nome: </label>
         <input type="text" name="nome" id="nome" required>
@@ -12,7 +13,6 @@
 
         <input type="submit" value="Cadastrar">
         <input type="reset" value="Limpar">
-
     </form>
     <br><hr><br>
 
@@ -24,7 +24,7 @@
             <th style="width: 150px; text-align: left;">Ações:</th>
         </thead>
         <tbody>
-            <% colmeia.forEach(colmeia => { %>
+            <% colmeias.forEach(colmeia => { %>
                 <tr>
                     <td><%= colmeia.nome%></td>
                     <td><%= colmeia.tipoAbelha%></td>
@@ -33,7 +33,6 @@
                     <td><a onclick="return confirm('Deseja mesmo excluir a colmeia <%= colmeia.nome %>?')" href="/Colmeia/delete/<%= colmeia.id %>">Excluir</a></td>
                 </tr>
             <% }) %>
-            
         </tbody>
     </table>
 </div>

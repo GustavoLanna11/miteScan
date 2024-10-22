@@ -2,6 +2,7 @@
 
 <div class="container">
     <h1>Cadastrar Usuáiro</h1>
+    <a href="/">Voltar</a>
     <form action="/user/new" method="POST">
         <label>Nome: </label>
         <input type="text" name="nome" id="nome" required>
@@ -30,7 +31,7 @@
             <th style="width: 150px; text-align: left;">Ações:</th>
         </thead>
         <tbody>
-            <% user.forEach(user => { %>
+            <% users.forEach(user => { %>
                 <tr>
                     <td><%= user.nome%></td>
                     <td><%= user.email%></td>

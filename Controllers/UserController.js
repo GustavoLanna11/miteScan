@@ -2,7 +2,7 @@ import express from "express";
 import User from "../Models/User.js";
 const UserRouter = express.Router();
 
-UserRouter.get("/user", (req,res)=>{
+UserRouter.get("/", (req,res)=>{
     User.findAll().then((users)=>{
         res.render("user", {
             users: users,
@@ -10,7 +10,7 @@ UserRouter.get("/user", (req,res)=>{
     })
 })
 
-UserRouter.post("/user/new", (req,res)=>{
+UserRouter.post("/new", (req,res)=>{
     const nome = req.body.nome;
     const email = req.body.email;
     const login = req.body.login;
@@ -23,20 +23,20 @@ UserRouter.post("/user/new", (req,res)=>{
         senha: senha,
         acesso: acesso
     }).then(()=>{
-        res.redirect("/")
+        res.redirect("/user")
     }).catch(error => {
         console.log(error)
     })
 })
 
-UserRouter.get("/user/delete/:id", (req, res)=>{
+UserRouter.get("/delete/:id", (req, res)=>{
     const id=req.params.id
     User.destroy({
         where:{
             id:id
         }
     }).then(()=>{
-        res.redirect("/")
+        res.redirect("/user")
     }).catch(error=>{
         console.log(error);
     })

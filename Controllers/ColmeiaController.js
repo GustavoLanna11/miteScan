@@ -10,7 +10,7 @@ ColmeiaRouter.get("/", (req,res)=>{
     })
 })
 
-ColmeiaRouter.post("/colmeia/new", (req,res)=>{
+ColmeiaRouter.post("/new", (req,res)=>{
     const nome = req.body.nome;
     const tipoAbelha = req.body.tipoAbelha;
     const tamanho = req.body.tamanho;
@@ -25,7 +25,7 @@ ColmeiaRouter.post("/colmeia/new", (req,res)=>{
     })
 })
 
-ColmeiaRouter.get("/colmeia/delete/:id", (req, res)=>{
+ColmeiaRouter.get("/delete/:id", (req, res)=>{
     const id=req.params.id
     Colmeia.destroy({
         where:{

@@ -1,7 +1,7 @@
 import Sequelize from 'sequelize';
 import connection from '../config/sequelize-config.js';
 
-const Colmeia = connection.define("Colmeia", {
+const Colmeia = connection.define("colmeia", {
     nome:{
         type: Sequelize.STRING,
     },
