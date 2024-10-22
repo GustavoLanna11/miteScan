@@ -5,3 +5,21 @@
 #navbar{
     background-color: #FFC90B;
 }
+
+/*Botão Voltar*/
+#voltar{
+    background-color: #FFC90B;
+    border-radius: 10px;
+    width: 60px;
+    height: 50px
+}
+
+#voltar:hover{
+    transform: scale(0.95);
+    background-color: lightsteelblue;
+}
+
+#titulo_pagina{
+    display: flex;
+    gap: 25px
+}
