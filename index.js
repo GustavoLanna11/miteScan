@@ -38,3 +38,6 @@ app.use("/colmeia", ColmeiaController);
 
 import UserController from "./Controllers/UserController.js"
 app.use("/user", UserController);
+
+import CadastroController from "./Controllers/CadastroController.js"
+app.use("/", CadastroController)
